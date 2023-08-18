@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+        function calculate() {
+          const inputValue = document.getElementsByName("show")[0].value;
+          document.getElementsByName("show")[0].value = eval(inputValue);
+        }
+        
+        function clearInput() {
+          document.getElementsByName("show")[0].value = "";
+        }
+        
+        function deleteLastCharacter() {
+          const inputValue = document.getElementsByName("show")[0].value;
+          document.getElementsByName("show")[0].value = inputValue.slice(0, -1);
+        }
+        
+        function appendCharacter(character) {
+          document.getElementsByName("show")[0].value += character;
+        }
+        </script>
+    <!-- Set the character encoding and define viewport for responsiveness -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Set the title of the webpage -->
+    <title>Calculator using JavaScript and Css</title>
+    
+    <!-- Link to external stylesheet for styling -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- A container for the calculator -->
+    <div class="container">
+      <div class="calculator">
+         <!-- Form for calculator buttons -->
+        <form>
+            <!-- Display area for input -->
+          <div class="show"><input type="text" name="show"/></div>
+          <div>
+            <!-- Operator and special buttons -->
+            <input type="button" value="AC" onclick="show.value =' ' " class="operator">
+            <input type="button" value="DEL" onclick="show.value= show.value.toString().slice(0,-1) " class="operator"/>
+            <input type="button" value="." onclick="show.value +='.' " class="operator"/>
+            <input type="button" value="/" onclick="show.value +='/' " class="operator"/>
+          </div>=
+          <div>
+             <!-- Numeric buttons and multiplication operator -->
+            <input type="button" value="7" onclick="show.value +='7' "/>
+            <input type="button" value="8" onclick="show.value +='8' "/>
+            <input type="button" value="9" onclick="show.value +='9' "/>
+            <input type="button" value="x" onclick="show.value +='x' " class="operator"/>
+          </div>
+          <div>
+             <!-- Numeric buttons and subtraction operator -->
+            <input type="button" value="4" onclick="show.value +='4' ">
+            <input type="button" value="5" onclick="show.value +='5' "/>
+            <input type="button" value="6" onclick="show.value +='6' "/>
+            <input type="button" value="-" onclick="show.value +='-' " class="operator"/>
+          </div>
+          <div>
+            <!-- Numeric buttons and addition operator -->
+            <input type="button" value="1" onclick="show.value +='1' ">
+            <input type="button" value="2" onclick="show.value +='2' "/>
+            <input type="button" value="3" onclick="show.value +='3' "/>
+            <input type="button" value="+" onclick="show.value +='+' " class="operator"/>
+          </div>
+          <div>
+             <!-- Numeric buttons, zero, and equal sign -->
+            <input type="button" value="00" onclick="show.value +='00' "/>
+            <input type="button" value="0" onclick="show.value +='0' "/>
+                 <!-- Evaluate the expression and show the result -->
+            <input type="button" value="=" onclick="show.value = eval(show.value)" class="equal operator"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
